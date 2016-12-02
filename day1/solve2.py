@@ -15,7 +15,8 @@ input = open('in.txt', 'r+').read().strip('\n').split(', ')
 def visited_before(visited, current):
     for visit in visited:
         if visit == current:
-            print(current)
+            print(abs(current[0]) + abs(current[1]))
+            exit()
     return False
 
 
@@ -30,7 +31,7 @@ for vector in vectors:
 
   direction = (direction + 4) % 4
   magnitude = int(vector[1])
-  
+
   if direction == 0:
     for i in range(magnitude):
       y += 1
@@ -56,6 +57,3 @@ for vector in vectors:
       visited.append((x, y))
 
 x,y = str(abs(x)), str(abs(y))
-print("x: " + x)
-print("y: " + y)
-print("x + y: " + str(int(x) + int(y)))
